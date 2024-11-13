@@ -3,7 +3,7 @@ import ServicesSection from '../components/ServicesSection';
 import Title from '../components/Title';
 import Resilia from '../images/Resilia.JPG'
 import Ripple from '../images/Ripple.JPG'
-import Vanguard from '../images/vanguard_logo.jpeg'
+import Vanguard_Bold from '../images/bold_vangaurd.JPG'
 
 function ExperiencePage() {
 const rippleMatch = Ripple
@@ -15,12 +15,19 @@ const resilia = Resilia
             <Title title={'Professional Experience'} span={'Professional'} />
         </div>
         <div className='experiencePage'>
-            <ServicesSection image={Vanguard} title={'Vanguard- 2023'} text={`Vanguard is one of the world's largest investment companies, offering a large selection of low-cost mutual funds, ETFs, advice, and related services.`} />
+            <ServicesSection image={Vanguard_Bold} title={'Vanguard - 2023 to Present'} text={`Vanguard is one of the world's largest investment companies, offering a large selection of low-cost mutual funds, ETFs, advice, and related services.`} />
             <div className="row">
                 <div className="col">
                     <ul>
-                        <li className='li_included'>Application Developer I with a focus on Front-End Development</li>
-                        <li className='li_included'>Leveraging AngularJS, Node.js, and TypeScript to build for Vanguard's Personal Investor Technology.</li>
+                        <li className='li_included'>Application Engineer working in Angular JS, Fastify, RxJS, and NgRx. Building Angular web applications and Restful micro-services hosted on the AWS cloud.</li>
+                        <li className='li_included'>Modernized the Buy/Sell Landing Page, enhancing user navigation and transaction efficiency.</li>
+                        <li className='li_included'>Implemented Automated Investing Plans, optimizing user investment processes and streamlining client interactions.</li>
+                        <li className='li_included'>Contributed to the development of the New Investor IRA Experience, which drove $250M in investments and resulted in a 4% increase in overall investment rates and a 22% adoption rate of Target Retirement Funds (TRFs) by new clients.</li>
+                        <li className='li_included'>Led the resolution of Quick Ticket tooltip issues, improving system reliability and reducing reported user errors by 15%.</li>
+                        <li className='li_included'>Optimized Order Validation for Quick Ticket and AIP ETF pages, increasing validation accuracy by 20% and reducing processing times for efficient order handling.</li>
+                        <li className='li_included'>Enhanced accessibility on the New IRA Page, improving compliance from 85% to 95% and ensuring inclusivity in alignment with WCAG standards.</li>
+                        <li className='li_included'>Actively contributed to PagerDuty on-call rotations, reducing MTTR by 10% through timely incident response, and improving overall system reliability.</li>
+                        <li className='li_included'>Consistently received outstanding performance reviews for timely project deliveries, innovation, and impactful contributions to key client-facing features.</li>
                     </ul>
                 </div>
             </div>
@@ -57,7 +64,7 @@ components, cloud-based platforms (Stripe, Auth0, Mailgun, Contentful, etc.), He
                     </ul>
                 </div>
             </div>
-            <a href='https://drive.google.com/file/d/1koF_Mval7Yq3uTjQTw-mDjK5Mz1vsvFn/view' target="_blank" rel="noreferrer">
+            <a href='https://drive.google.com/file/d/1Y7BxCrw6FkFd4xf-Fd7_gX9bH0dTtiY9/view' target="_blank" rel="noreferrer">
                 <button className="btn">Download Résumé</button>
             </a>
         </div>

@@ -1,37 +1,121 @@
-import React from 'react'
-import ContactItem from '../components/ContactItem';
-import email from '../images/mail.png';
-import location from '../images/google-maps.png';
-import Title from '../components/Title';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';  // Ensure Toastify CSS is imported
 
-import { faEnvelope, faLocation, faUser } from '@fortawesome/free-solid-svg-icons'
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-function ContactPage() {
-    return (
-        <div>
-            <div className="title">
-                <Title title={'Contact Me'} span={'Contact Me'} />
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    const formPayload = new FormData();
+    formPayload.append("access_key", "d2244be5-c3cf-4024-b947-124ab8db998b");
+    formPayload.append("name", formData.name);
+    formPayload.append("email", formData.email);
+    formPayload.append("message", formData.message);
+
+    const object = Object.fromEntries(formPayload);
+    const json = JSON.stringify(object);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
+
+      if (res.success) {
+        toast.success(res.message);
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        toast.error(res.message);
+      }
+    } catch (error) {
+      toast.error("Form submission error. Please try again.");
+      console.error("Form submission error:", error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  return (
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      <div id='contact' className='contact'>
+        <div className="contact-section">
+          <div className="contact-left">
+            <h1>Let's connect.</h1>
+            <p>I am always open to connecting and hearing about potential opportunities. If you're interested in mentorship or arranging a meeting, please feel free to reach out and let me know.</p>
+            <div className="contact-details">
+              <div className="contact-detail">
+                <p>iloloizu97@gmail.com</p>
+              </div>
             </div>
-            <div className="ContactPage">
-                {window.innerWidth > 490 ? 
-                <div className="map-sect">
-                    {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111026.140636397!2d-95.70933874205896!3d29.58720246896246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640de10e11b70cb%3A0x2779e11b2263d8cc!2sSugar%20Land%2C%20TX!5e0!3m2!1sen!2sus!4v1645308102312!5m2!1sen!2sus" width="640" height="480" width="600" height="450" zoom="11" frameBorder="0" style={{border:0}} allowFullScreen="" aria-hidden="false" tabIndex="0"/>
-                </div>
-                : "" }
-                <div className="contact-sect">
-                    <ContactItem className="contact" icon={faEnvelope} href1={'mailto: iloloizu97@gmail.com'} text={'iloloizu97@gmail.com'} title={'Email'}/>
-                    <ContactItem  className="contact" icon={faLocation} text={'Sugar Land, TX,'} text2={'United States'} title={'Location'}/>
-                    <NavLink to="/links">
-                        <ContactItem className="contact" icon={faUser} text={'Links to my Socials'}/>
-                    </NavLink>
-                </div>
-                <br/>
-                    
-            </div>
+          </div>
+          <form onSubmit={onSubmit} className="contact-right">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              placeholder='Enter your name'
+              name='name'
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              placeholder='Enter your email'
+              name='email'
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+
+            <label htmlFor="message">Your message</label>
+            <textarea
+              name="message"
+              rows="8"
+              placeholder='Enter your message'
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            ></textarea>
+            <button type='submit' className="contact-submit">Submit now</button>
+          </form>
         </div>
-    )
+      </div>
+    </>
+  );
 }
 
 export default ContactPage;

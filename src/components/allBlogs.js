@@ -20,8 +20,19 @@ const blog18 = "https://miro.medium.com/max/1400/1*z_YMJAipDLqen7TTQSEBsA.webp"
 const blog19 = "https://miro.medium.com/max/1400/1*nCcZ1AGdnKHX2RK0W3EgRQ.webp"
 const blog20 = "https://miro.medium.com/max/1356/0*kxPYwfJmkXZ3iCWy.webp"
 const blog21 = "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*29tgDjLfcEIXjrhW.png"
+const blog22 = "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*VehSGnVPsaxpqBfzA3hu7A.png"
 
 const blogs = [
+    {
+        id: 22,
+        image: blog22,
+        title: 'Rethinking Reactivity in Angular: A Deep Dive into Angular Signals',
+        link: 'https://medium.com/@ilolo/rethinking-reactivity-in-angular-a-deep-dive-into-angular-signals-ed2eeac7655b',
+        date : '25',
+        month: 'Oct',
+        year: '2024'
+
+    },
     {
         id: 21,
         image: blog21,

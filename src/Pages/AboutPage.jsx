@@ -2,12 +2,13 @@ import React from 'react'
 import Title from '../components/Title'
 import ImageSelection from '../components/ImageSelection'
 import ServicesSection from '../components/ServicesSection'
-import SkillsSection from '../components/SkillsSection'
+// import SkillsSection from '../components/SkillsSection'
 import leadership from '../images/Leadershipweb.png'
 import photography from '../images/Photography.jpg'
 import webdesign from '../images/WebDesign.JPG'
 import track from '../images/trackweb.png'
 import Resilia from '../images/Resilia.JPG'
+import vanguard_track from '../images/vanguard_track.jpg'
 
 import { faReact, faPython, faVuejs, faHtml5, faCss3, faSass, faGithub, faBootstrap } from '@fortawesome/free-brands-svg-icons'
 
@@ -48,13 +49,15 @@ export default function AboutPage() {
             <Title title={'Traits'} span={'Traits'} />
             <div className="servives-container">
             <hr/>
-                <ServicesSection image={resilia} title={'Professional Experience'} text={`During my time at RippleMatch, I worked as a Full-Stack Software Engineer primarily with Vue.js, Python, Jest, and SQLAlchemy. I worked with key stake holders and Senior Engineers in an Agile Environment to build scalable features from concept to implementation. I also gave a live demo presentation to the entire company. 
+            <ServicesSection image={resilia} title={'Professional Experience'} text={`During my time at RippleMatch, I worked as a Full-Stack Software Engineer primarily with Vue.js, Python, Jest, and SQLAlchemy. I worked with key stake holders and Senior Engineers in an Agile Environment to build scalable features from concept to implementation. I also gave a live demo presentation to the entire company. 
                 I also have experience working as a Software Engineer I at Resilia. You can find more in my resume linked above. `} /> 
                 <hr/>
                 <ServicesSection image={webdesign} title={'Web Design'} alt="Ilolo studying at Flatiron School"
                 text={`In November of 2021 I took a leap of faith and enrolled Software Engineering Bootcamp—and I've yet to look back. Flatiron School is a Full-stack web development in Ruby on Rails, JavaScript (ES6), React, Redux, HTML5, CSS3, API Development, Authentication and Authorization, Object-Oriented Programming, SQL, Sinatra, ActiveRecord, JSON.`}
                 /> <hr/>
-                <ServicesSection image={leadership} title={'Leadership & Teamwork'} alt="Ilolo receiving the Distinguished Letterman's Award" 
+                <ServicesSection image={vanguard_track} title={'Camaraderie & Teamwork'} alt="Ilolo and Coworkers at Penn Relays in 2024" text={`Throughout my journey in both tech and athletics, I've found that teamwork and camaraderie are at the core of success. Competing in track and field taught me the power of shared goals and the impact of a supportive environment. This experience translates into my professional life, where I actively foster inclusive spaces. I founded the Black at Resilia Employee Resource Group and am a proud member of Vanguard's BOLD ERG, working to uplift and empower my colleagues. Whether collaborating on code or racing at the Penn Relays, I am committed to learning, growing, and achieving alongside my team.`} /> 
+                <hr/>
+                <ServicesSection image={leadership} title={'Leadership & Service'} alt="Ilolo receiving the Distinguished Letterman's Award" 
                 text={'In 2019, I received the Distinguished Letterman Award from Texas A&M University. It is the highest award presented to a student-athlete by the athletics department. The individual is someone who displays extraordinary talents in the areas of athletics, scholarship, leadership, and service.'}
                 /> <hr/>
                 <ServicesSection image={photography} title={'Photograpy & Videography'} alt="Ilolo taking pictures from a helicopter in NYC"
